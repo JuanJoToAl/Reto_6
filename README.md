@@ -9,24 +9,28 @@ _El siguiente repositorio muestra la solución al reto 6_
 import math
 
 ```python
-# Las abreviaturas usadas son: v =volumen, r = radio, ar = área, 
+import math
+
+# Las abreviaturas usadas son: v =volumen, r = radio, a = área, 
 # esf = esfera, cn= cono sum = suma y slds = sólidos.
 
-def v_ar_slds( r_esf = float, r_cn = float, h_cn = float ) ->  float:
+def v_slds( r_esf = float, r_cn = float, h_cn = float ) ->  float:
     v_esf = (4/3) * math.pi * r_esf**3
     v_cn = (1/3) * math.pi * r_cn**2 * h_cn
-    ar_sup_esf = 4 * math.pi * r_esf**2
-    ar_sup_cn = math.pi * r_cn**2 + math.pi * ((r_cn**2 + h_cn**2)**0.5) * r_cn
-    return v_esf + v_cn, ar_sup_esf + ar_sup_cn
+    return v_esf + v_cn
 
+def a_slds( r_esf = float, r_cn = float, h_cn = float ) ->  float:
+    a_sup_esf = 4 * math.pi * r_esf**2
+    a_sup_cn = math.pi * r_cn**2 + math.pi * ((r_cn**2 + h_cn**2)**0.5) * r_cn
+    return a_sup_esf + a_sup_cn
 
 if __name__ == "__main__":
   r_esf = float(input("Ingrese el valor del radio de la esfera"))
   r_cn = float(input("Ingrese el valor del radio del cono"))
   h_cn = float(input("Ingrese el valor de la altura del cono"))
-  sum_v_slds, sum_ar_slds = v_ar_slds(r_esf, r_cn, h_cn)
+  sum_v_slds, sum_a_slds = v_slds(r_esf, r_cn, h_cn), a_slds(r_esf, r_cn, h_cn)
   print("La suma de volúmenes de esfera y cono es " + str(round(sum_v_slds, 3)))
-  print("La suma de áreas de esfera y cono es " + str(round(sum_ar_slds, 3)))
+  print("La suma de áreas de esfera y cono es " + str(round(sum_a_slds, 3)))
 ```
 
 ## 2. Dado la figura de la imagen, desarrolle:
@@ -38,6 +42,8 @@ if __name__ == "__main__":
 + Revise como utilizar el valor de `pi` usando *import math* y *math.pi*
 
 ```python
+import math
+
 # Las abreviaturas usadas son: per = perímetro, r = radio, ar = área, 
 # circu = círculo, rtg = rectángulo fgs = figuras, sum = suma
 # a = altura rectángulo y b = base rectángulo.
