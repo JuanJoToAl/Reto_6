@@ -14,12 +14,12 @@ import math
 # Las abreviaturas usadas son: v =volumen, r = radio, a = área, 
 # esf = esfera, cn= cono sum = suma y slds = sólidos.
 
-def v_slds( r_esf = float, r_cn = float, h_cn = float ) ->  float:
+def v_slds( r_esf : float, r_cn : float, h_cn : float ) ->  float:
     v_esf = (4/3) * math.pi * r_esf**3
     v_cn = (1/3) * math.pi * r_cn**2 * h_cn
     return v_esf + v_cn
 
-def a_slds( r_esf = float, r_cn = float, h_cn = float ) ->  float:
+def a_slds( r_esf : float, r_cn : float, h_cn : float ) ->  float:
     a_sup_esf = 4 * math.pi * r_esf**2
     a_sup_cn = math.pi * r_cn**2 + math.pi * ((r_cn**2 + h_cn**2)**0.5) * r_cn
     return a_sup_esf + a_sup_cn
@@ -31,6 +31,7 @@ if __name__ == "__main__":
   sum_v_slds, sum_a_slds = v_slds(r_esf, r_cn, h_cn), a_slds(r_esf, r_cn, h_cn)
   print("La suma de volúmenes de esfera y cono es " + str(round(sum_v_slds, 3)))
   print("La suma de áreas de esfera y cono es " + str(round(sum_a_slds, 3)))
+
 ```
 
 ## 2. Dado la figura de la imagen, desarrolle:
@@ -48,7 +49,7 @@ import math
 # circu = círculo, rtg = rectángulo fgs = figuras, sum = suma
 # a = altura rectángulo y b = base rectángulo.
 
-def ar_per_fgs( r_circu = float, a_rtg = float, b_rtg = float ) ->  float:
+def ar_per_fgs( r_circu : float, a_rtg : float, b_rtg : float ) ->  float:
     ar_circu = math.pi * r_circu**2
     ar_rtg = a_rtg * b_rtg
     per_circu = 2 * math.pi * r_circu
@@ -71,7 +72,7 @@ if __name__ == "__main__":
 # Las abreviaturas usadas son: ct = cantidad, crn = carne, gna = gallina y
 # pto = pollito
 
-def ct_crn_aves(ct_gna = float, ct_gallo = float, ct_pto = float) ->  float:
+def ct_crn_aves(ct_gna : float, ct_gallo : float, ct_pto : float) ->  float:
     crn_gna =  6 * ct_gna
     crn_gallo = 7 * ct_gallo 
     return crn_gna, crn_gallo, ct_pto
@@ -91,7 +92,7 @@ if __name__ == "__main__":
 ```python
 #Las abreviaturas usadas son: v = valor, p = panes, l = leche, h = huevos
 
-def mandado(p = float, l = float, h = float, billete = float) ->  float:
+def mandado(p : float, l : float, h : float, billete : float) ->  float:
     v_vueltas = billete - (300 * p + 3300 * l + 350 * h) 
     return v_vueltas
 
@@ -112,7 +113,7 @@ if __name__ == "__main__":
 ```python
 #Las abreviaturas usadas son: ti = tasa de interés y m = meses
 
-def prestamo( capital = float, ti = float, m = float) ->  float:
+def prestamo( capital : float, ti : float, m : float) ->  float:
     return capital * (1 + ti)**m
 
 if __name__ == "__main__":
@@ -128,7 +129,7 @@ if __name__ == "__main__":
 ```python
 #Las abreviaturas usadas son: d = días, c = casos y enf= enfermos
 
-def contagios( enf = int, d = int) ->  int:
+def contagios( enf : int, d : int) ->  int:
     total_contagios = enf * (2)**d
     return total_contagios
 
