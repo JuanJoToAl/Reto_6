@@ -158,7 +158,7 @@ from functools import reduce
 def promedio(a : float, b : float, c : float, d : float, e : float) -> float:
     return (a + b + c + d + e) / 5
 
-def mediana(a : float, b : float, c : float, d : float, e : float):
+def mediana(a : float, b : float, c : float, d : float, e : float) -> float:
     return (a + b + c + d + e) // 5
 
 def promedio_multiplicativo(a : float, b : float, c : float, d : float, e : float) -> float:
