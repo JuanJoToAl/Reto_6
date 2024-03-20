@@ -1,5 +1,9 @@
 import funciones
 
+# Las abreviaturas usadas son: per = perímetro, r = radio, ar = área, 
+# circu = círculo, rtg = rectángulo fgs = figuras, sum = suma
+# a = altura rectángulo y b = base rectángulo.
+
 if __name__ == "__main__":
     r_circu = float(input("Ingrese el valor del radio del círculo"))
     a_rtg = float(input("Ingrese el valor de la altura del rectángulo"))
